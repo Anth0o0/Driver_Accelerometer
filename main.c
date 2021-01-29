@@ -128,6 +128,12 @@ int main(void)
 
   	}while(try < 3 && LIS3DSH_status == LIS3DSH_ERROR);
 
+  while(LIS3DSH_status == LIS3DSH_ERROR)
+  {
+	  HAL_GPIO_TogglePin(GPIOD, LD5_Pin);
+	  HAL_Delay(500);
+  }
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
